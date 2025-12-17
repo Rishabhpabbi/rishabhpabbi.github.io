@@ -3,2108 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rishabh Pabbi - Data Scientist & Computational Researcher specializing in cancer bioinformatics, ML, and healthcare analytics.">
-    <title>Rishabh Pabbi | Data Scientist & Researcher</title>
+    <meta name="description" content="Rishabh Pabbi - Data Scientist & Computational Researcher specializing in cancer bioinformatics, machine learning, and healthcare analytics.">
+    <title>Rishabh Pabbi | Data Scientist</title>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rishabhpabbi.github.io/">
+    <meta property="og:title" content="Rishabh Pabbi | Data Scientist & Researcher">
+    <meta property="og:description" content="Data Scientist specializing in cancer bioinformatics, survival analysis, and healthcare analytics. MSc Statistics @ UVic.">
+    <meta property="og:image" content="https://rishabhpabbi.github.io/IMG_0022.JPG">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rishabh Pabbi | Data Scientist & Researcher">
+    <meta name="twitter:description" content="Data Scientist specializing in cancer bioinformatics, survival analysis, and healthcare analytics.">
+    <meta name="twitter:image" content="https://rishabhpabbi.github.io/IMG_0022.JPG">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* ==================== VS CODE COLOR SCHEME ==================== */
-        :root {
-            /* VS Code Light Theme */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f3f3f3;
-            --bg-tertiary: #e8e8e8;
-            --bg-editor: #fffffe;
-            --bg-sidebar: #f3f3f3;
-            --bg-card: #ffffff;
-            --text-primary: #1e1e1e;
-            --text-secondary: #616161;
-            --text-muted: #9e9e9e;
-
-            /* VS Code Syntax Colors */
-            --syntax-green: #098658;      /* Strings */
-            --syntax-blue: #0066b8;       /* Functions */
-            --syntax-orange: #d16100;     /* Keywords */
-            --syntax-cyan: #008080;       /* Variables */
-            --syntax-yellow: #795e26;     /* Classes */
-            --syntax-red: #cd3131;        /* Errors */
-            --syntax-comment: #6a9955;    /* Comments */
-
-            /* UI Colors */
-            --accent-primary: #0078d4;
-            --accent-secondary: #098658;
-            --border-color: #e0e0e0;
-            --selection-bg: rgba(0, 120, 212, 0.1);
-
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
-
-            /* Layout */
-            --nav-height: 48px;
-            --border-radius: 6px;
-            --transition: 0.2s ease;
-        }
-
-        [data-theme="dark"] {
-            /* VS Code Dark Theme */
-            --bg-primary: #1e1e1e;
-            --bg-secondary: #252526;
-            --bg-tertiary: #2d2d2d;
-            --bg-editor: #1e1e1e;
-            --bg-sidebar: #252526;
-            --bg-card: #252526;
-            --text-primary: #d4d4d4;
-            --text-secondary: #9e9e9e;
-            --text-muted: #6e6e6e;
-
-            /* VS Code Dark Syntax Colors */
-            --syntax-green: #6a9955;
-            --syntax-blue: #569cd6;
-            --syntax-orange: #ce9178;
-            --syntax-cyan: #4ec9b0;
-            --syntax-yellow: #dcdcaa;
-            --syntax-red: #f44747;
-            --syntax-comment: #6a9955;
-
-            --accent-primary: #0078d4;
-            --accent-secondary: #4ec9b0;
-            --border-color: #3e3e3e;
-            --selection-bg: rgba(51, 153, 255, 0.2);
-
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: background var(--transition), color var(--transition);
-        }
-
-        ::selection {
-            background: var(--selection-bg);
-        }
-
-        /* Code Font */
-        .mono {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-        }
-
-        /* Syntax Highlighting Classes */
-        .syntax-green { color: var(--syntax-green); }
-        .syntax-blue { color: var(--syntax-blue); }
-        .syntax-orange { color: var(--syntax-orange); }
-        .syntax-cyan { color: var(--syntax-cyan); }
-        .syntax-yellow { color: var(--syntax-yellow); }
-        .syntax-comment { color: var(--syntax-comment); }
-
-        /* ==================== NAVIGATION ==================== */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--nav-height);
-            background: var(--bg-sidebar);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 24px;
-            z-index: 1000;
-            transition: background var(--transition);
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .nav-logo .bracket { color: var(--syntax-yellow); }
-        .nav-logo .name { color: var(--syntax-blue); }
-        .nav-logo .dot { color: var(--text-muted); }
-        .nav-logo .ext { color: var(--syntax-cyan); }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 6px 12px;
-            border-radius: var(--border-radius);
-            transition: all var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-            background: var(--bg-tertiary);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .theme-toggle {
-            width: 32px;
-            height: 32px;
-            border: none;
-            background: var(--bg-tertiary);
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            transition: all var(--transition);
-        }
-
-        .theme-toggle:hover {
-            background: var(--accent-primary);
-            color: white;
-        }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-toggle span {
-            width: 20px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all var(--transition);
-        }
-
-        .mobile-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(4px, 4px);
-        }
-        .mobile-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .mobile-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(4px, -4px);
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            inset: var(--nav-height) 0 0 0;
-            background: var(--bg-primary);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition);
-            z-index: 999;
-        }
-
-        .mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .mobile-menu a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* ==================== HERO SECTION ==================== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: calc(var(--nav-height) + 40px) 24px 40px;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.15;
-        }
-
-        [data-theme="dark"] .hero-bg img {
-            opacity: 0.25;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, transparent 50%, var(--bg-primary) 100%);
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 650px;
-        }
-
-        /* Terminal-style intro */
-        .hero-terminal {
-            background: var(--bg-editor);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            margin-bottom: 32px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .terminal-header {
-            background: var(--bg-sidebar);
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .terminal-dot.red { background: #ff5f56; }
-        .terminal-dot.yellow { background: #ffbd2e; }
-        .terminal-dot.green { background: #27ca40; }
-
-        .terminal-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-left: 8px;
-        }
-
-        .terminal-body {
-            padding: 20px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-
-        .terminal-line {
-            margin-bottom: 4px;
-        }
-
-        .terminal-prompt {
-            color: var(--syntax-green);
-        }
-
-        .terminal-command {
-            color: var(--syntax-cyan);
-        }
-
-        .terminal-output {
-            color: var(--text-primary);
-            padding-left: 0;
-        }
-
-        .hero-headline {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-headline .highlight {
-            color: var(--syntax-blue);
-        }
-
-        .hero-tagline {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 32px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: left;
-        }
-
-        .stat-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--syntax-cyan);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all var(--transition);
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent-primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            filter: brightness(1.1);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-secondary {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-secondary);
-            border-color: var(--accent-primary);
-        }
-
-        /* Hero Visual */
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            max-width: 350px;
-            width: 100%;
-        }
-
-        .profile-card-header {
-            background: var(--bg-sidebar);
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .profile-card-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .profile-image-container {
-            padding: 24px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center 20%;
-            border: 3px solid var(--accent-primary);
-            box-shadow: 0 0 0 4px var(--bg-card), var(--shadow-md);
-        }
-
-        .profile-info {
-            padding: 0 24px 24px;
-            text-align: center;
-        }
-
-        .profile-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .profile-role {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--syntax-cyan);
-            margin-bottom: 16px;
-        }
-
-        .profile-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            border-radius: 4px;
-            background: var(--bg-tertiary);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        .badge.green { color: var(--syntax-green); border-color: var(--syntax-green); background: rgba(106, 153, 85, 0.1); }
-        .badge.blue { color: var(--syntax-blue); border-color: var(--syntax-blue); background: rgba(86, 156, 214, 0.1); }
-        .badge.cyan { color: var(--syntax-cyan); border-color: var(--syntax-cyan); background: rgba(78, 201, 176, 0.1); }
-        .badge.orange { color: var(--syntax-orange); border-color: var(--syntax-orange); background: rgba(206, 145, 120, 0.1); }
-
-        /* ==================== SECTIONS ==================== */
-        section {
-            padding: 100px 24px;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 60px;
-        }
-
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--syntax-comment);
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-        }
-
-        /* Alternating backgrounds */
-        section:nth-child(even) {
-            background: var(--bg-secondary);
-        }
-
-        /* ==================== ABOUT SECTION ==================== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .about-image-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .about-image-header {
-            background: var(--bg-sidebar);
-            padding: 8px 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .about-image {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            object-position: center 15%;
-        }
-
-        .about-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 16px;
-            color: var(--syntax-blue);
-        }
-
-        .about-content p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .expertise-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .expertise-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            background: var(--bg-tertiary);
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            transition: all var(--transition);
-        }
-
-        .expertise-item:hover {
-            border-color: var(--accent-primary);
-            transform: translateX(4px);
-        }
-
-        .expertise-icon {
-            font-size: 1.2rem;
-        }
-
-        /* ==================== SKILLS SECTION ==================== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: all var(--transition);
-        }
-
-        .skill-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
-        }
-
-        .skill-card-header {
-            background: var(--bg-sidebar);
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .skill-card-icon {
-            font-size: 1.25rem;
-        }
-
-        .skill-card-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .skill-card-body {
-            padding: 16px;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            padding: 6px 12px;
-            border-radius: 4px;
-            background: var(--bg-tertiary);
-            color: var(--syntax-cyan);
-            border: 1px solid var(--border-color);
-            transition: all var(--transition);
-        }
-
-        .skill-tag:hover {
-            background: var(--accent-primary);
-            color: white;
-            border-color: var(--accent-primary);
-        }
-
-        /* Skill Bars */
-        .skill-bars {
-            margin-top: 48px;
-            max-width: 700px;
-        }
-
-        .skill-bar {
-            margin-bottom: 24px;
-        }
-
-        .skill-bar-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .skill-bar-name {
-            font-weight: 500;
-        }
-
-        .skill-bar-value {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--syntax-cyan);
-        }
-
-        .skill-bar-track {
-            height: 8px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .skill-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--syntax-blue), var(--syntax-cyan));
-            border-radius: 4px;
-            width: 0;
-            transition: width 1.2s ease;
-        }
-
-        /* ==================== EXPERIENCE SECTION ==================== */
-        .experience-list {
-            max-width: 800px;
-        }
-
-        .experience-item {
-            position: relative;
-            padding-left: 32px;
-            padding-bottom: 48px;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .experience-item:last-child {
-            padding-bottom: 0;
-            border-left-color: transparent;
-        }
-
-        .experience-dot {
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            border: 2px solid var(--bg-primary);
-        }
-
-        .experience-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            transition: all var(--transition);
-        }
-
-        .experience-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
-
-        .experience-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .experience-company {
-            color: var(--syntax-blue);
-            font-weight: 500;
-        }
-
-        .experience-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            padding: 4px 12px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            color: var(--syntax-green);
-            white-space: nowrap;
-        }
-
-        .experience-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .experience-description li {
-            margin-bottom: 8px;
-        }
-
-        .experience-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
-        }
-
-        .experience-tech span {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            color: var(--syntax-orange);
-        }
-
-        /* ==================== PROJECTS SECTION ==================== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: all var(--transition);
-        }
-
-        .project-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-6px);
-        }
-
-        .project-card.featured {
-            grid-column: span 2;
-        }
-
-        .project-header {
-            background: var(--bg-sidebar);
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .project-file {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .project-file-icon {
-            color: var(--syntax-cyan);
-        }
-
-        .project-status {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            background: rgba(39, 202, 64, 0.15);
-            color: #27ca40;
-            border-radius: 4px;
-        }
-
-        .project-body {
-            padding: 24px;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .project-tech span {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            color: var(--syntax-cyan);
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--syntax-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: gap var(--transition);
-        }
-
-        .project-link:hover {
-            gap: 10px;
-        }
-
-        /* ==================== PUBLICATIONS SECTION ==================== */
-        .publications-list {
-            max-width: 800px;
-        }
-
-        .publication-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            margin-bottom: 16px;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            transition: all var(--transition);
-        }
-
-        .publication-item:hover {
-            border-color: var(--accent-primary);
-            transform: translateX(8px);
-        }
-
-        .publication-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--syntax-blue);
-            min-width: 40px;
-        }
-
-        .publication-content h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .publication-meta {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        .publication-status {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            background: rgba(255, 189, 46, 0.15);
-            color: #ffbd2e;
-            border-radius: 4px;
-        }
-
-        /* ==================== EDUCATION SECTION ==================== */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .education-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: all var(--transition);
-        }
-
-        .education-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
-        }
-
-        .education-header {
-            background: var(--bg-sidebar);
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .education-year {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--syntax-green);
-        }
-
-        .education-body {
-            padding: 20px;
-        }
-
-        .education-degree {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .education-school {
-            color: var(--syntax-blue);
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .education-gpa {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            padding: 6px 12px;
-            background: rgba(39, 202, 64, 0.1);
-            color: #27ca40;
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-
-        .education-details {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            padding-left: 16px;
-        }
-
-        .education-details li {
-            margin-bottom: 6px;
-        }
-
-        /* ==================== CONTACT SECTION ==================== */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-content p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .contact-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 24px 16px;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-card:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-tertiary);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            transition: all var(--transition);
-        }
-
-        .contact-card:hover .contact-icon {
-            background: var(--accent-primary);
-            color: white;
-        }
-
-        .contact-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .contact-card span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* ==================== FOOTER ==================== */
-        footer {
-            padding: 24px;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            background: var(--bg-sidebar);
-        }
-
-        footer p {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* ==================== ANIMATIONS ==================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                order: 2;
-            }
-
-            .hero-visual {
-                order: 1;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-tagline {
-                margin: 0 auto 32px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image-card {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .project-card.featured {
-                grid-column: span 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            section {
-                padding: 60px 16px;
-            }
-
-            .hero {
-                padding: calc(var(--nav-height) + 24px) 16px 24px;
-            }
-
-            .hero-terminal {
-                margin-bottom: 24px;
-            }
-
-            .terminal-body {
-                padding: 16px;
-                font-size: 0.8rem;
-            }
-
-            .hero-headline {
-                font-size: 1.75rem;
-            }
-
-            .hero-stats {
-                gap: 24px;
-            }
-
-            .stat-value {
-                font-size: 1.5rem;
-            }
-
-            .profile-card {
-                max-width: 280px;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            .expertise-list {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .publication-item {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-stats {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-
-            .stat {
-                text-align: center;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-brand">
-            <span class="nav-logo mono">
-                <span class="bracket">{</span><span class="name">rishabh</span><span class="dot">.</span><span class="ext">dev</span><span class="bracket">}</span>
-            </span>
+    <!-- VS Code Style Top Bar -->
+    <header class="vscode-header">
+        <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
         </div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Research</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-actions">
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                <span id="theme-icon">&#9789;</span>
+        <div class="file-tabs">
+            <a href="index.html" class="tab active">
+                <span class="tab-icon">&#127968;</span>
+                home
+            </a>
+            <a href="about.html" class="tab">
+                <span class="tab-icon">&#128100;</span>
+                about.md
+            </a>
+            <a href="projects.html" class="tab">
+                <span class="tab-icon">&#128193;</span>
+                projects/
+            </a>
+            <a href="research.html" class="tab">
+                <span class="tab-icon">&#128218;</span>
+                research.bib
+            </a>
+            <a href="contact.html" class="tab">
+                <span class="tab-icon">&#9993;</span>
+                contact.json
+            </a>
+        </div>
+        <div class="header-actions">
+            <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                <span id="theme-icon">&#9788;</span>
             </button>
-            <div class="mobile-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="https://github.com/rishabhpabbi" target="_blank" class="github-btn" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
         </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item active">Home</a>
+        <a href="about.html" class="mobile-nav-item">About</a>
+        <a href="projects.html" class="mobile-nav-item">Projects</a>
+        <a href="research.html" class="mobile-nav-item">Research</a>
+        <a href="contact.html" class="mobile-nav-item">Contact</a>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <a href="#about" onclick="closeMobileMenu()">About</a>
-        <a href="#skills" onclick="closeMobileMenu()">Skills</a>
-        <a href="#experience" onclick="closeMobileMenu()">Experience</a>
-        <a href="#projects" onclick="closeMobileMenu()">Projects</a>
-        <a href="#publications" onclick="closeMobileMenu()">Research</a>
-        <a href="#education" onclick="closeMobileMenu()">Education</a>
-        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <img src="5FB01355-6C79-4665-9E12-9E4D3A8B421C.JPG" alt="Journey Background">
-        </div>
-
-        <div class="hero-container">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="hero-content">
-                <!-- Terminal-style introduction -->
-                <div class="hero-terminal reveal">
-                    <div class="terminal-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="terminal-title">rishabh@uvic ~ </span>
+                <div class="hero-intro">
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span>Available for opportunities</span>
                     </div>
-                    <div class="terminal-body">
+                    <h1 class="hero-name">Rishabh Pabbi</h1>
+                    <p class="hero-title">Data Scientist & Computational Researcher</p>
+                    <p class="hero-tagline">I transform complex biological data into insights that save lives. Currently researching cancer immunotherapy at UVic.</p>
+
+                    <div class="hero-cta">
+                        <a href="projects.html" class="btn-primary">View My Work</a>
+                        <a href="Rishabh_Pabbi_Resume.pdf" target="_blank" class="btn-secondary">Download Resume</a>
+                    </div>
+                </div>
+
+                <div class="hero-terminal">
+                    <div class="terminal-bar">
+                        <span class="terminal-title">rishabh@uvic ~ portfolio</span>
+                    </div>
+                    <div class="terminal-content">
                         <div class="terminal-line">
-                            <span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span>
+                            <span class="prompt">$</span>
+                            <span class="command">cat profile.json</span>
                         </div>
-                        <div class="terminal-line terminal-output">
-                            <span class="syntax-cyan">Data Scientist</span> & <span class="syntax-green">Computational Researcher</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$</span> <span class="terminal-command">cat mission.txt</span>
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            Transforming biological data into <span class="syntax-orange">life-saving insights</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">$</span> <span class="terminal-command">echo $FOCUS</span>
-                        </div>
-                        <div class="terminal-line terminal-output">
-                            <span class="syntax-blue">Cancer Bioinformatics</span> | <span class="syntax-cyan">ML</span> | <span class="syntax-green">Healthcare Analytics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <h1 class="hero-headline reveal">
-                    I'm <span class="highlight">Rishabh Pabbi</span>,<br>
-                    building the future of<br>healthcare with data.
-                </h1>
-
-                <p class="hero-tagline reveal">
-                    MSc Statistics @ UVic | Researching antibody diffusion in cancer | Making complex data tell stories that save lives.
-                </p>
-
-                <div class="hero-stats reveal">
-                    <div class="stat">
-                        <div class="stat-value" data-target="9.0">0</div>
-                        <div class="stat-label">GPA</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value" data-target="3">0</div>
-                        <div class="stat-label">Papers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value" data-target="5">0</div>
-                        <div class="stat-label">Years Exp</div>
-                    </div>
-                </div>
-
-                <div class="hero-cta reveal">
-                    <a href="#contact" class="btn btn-primary">
-                        Let's Connect
-                        <span>&#8594;</span>
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        View Projects
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-visual reveal">
-                <div class="profile-card">
-                    <div class="profile-card-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        <span class="profile-card-title">profile.json</span>
-                    </div>
-                    <div class="profile-image-container">
-                        <img src="IMG_0022.JPG" alt="Rishabh Pabbi" class="profile-image">
-                    </div>
-                    <div class="profile-info">
-                        <h2 class="profile-name">Rishabh Pabbi</h2>
-                        <p class="profile-role">// Data Scientist & Researcher</p>
-                        <div class="profile-badges">
-                            <span class="badge green">Python</span>
-                            <span class="badge blue">R</span>
-                            <span class="badge cyan">ML/AI</span>
-                            <span class="badge orange">Statistics</span>
-                        </div>
+                        <pre class="terminal-output">{
+  <span class="key">"role"</span>: <span class="string">"Data Scientist"</span>,
+  <span class="key">"focus"</span>: [
+    <span class="string">"Cancer Bioinformatics"</span>,
+    <span class="string">"Machine Learning"</span>,
+    <span class="string">"Healthcare Analytics"</span>
+  ],
+  <span class="key">"education"</span>: <span class="string">"MSc Statistics @ UVic"</span>,
+  <span class="key">"gpa"</span>: <span class="number">9.0</span>,
+  <span class="key">"publications"</span>: <span class="number">4</span>,
+  <span class="key">"status"</span>: <span class="string">"Building the future"</span>
+}</pre>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// about_me</span>
-                <h2 class="section-title">Who I Am</h2>
-                <p class="section-subtitle">A researcher bridging data science and healthcare to create real-world impact.</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-image-card reveal">
-                    <div class="about-image-header">
-                        <span class="terminal-dot red"></span>
-                        <span class="terminal-dot yellow"></span>
-                        <span class="terminal-dot green"></span>
-                        rishabh.jpg
-                    </div>
-                    <img src="IMG_0022.JPG" alt="Rishabh Pabbi" class="about-image">
+        <!-- Quick Stats -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="9.0">0</span>
+                    <span class="stat-label">GPA</span>
                 </div>
-
-                <div class="about-content reveal">
-                    <h3>Computational Researcher @ UVic</h3>
-                    <p>
-                        I'm a graduate researcher at the University of Victoria working under Dr. Farouk Nathoo. My research focuses on understanding immune responses in ovarian cancer through computational modeling and statistical learning.
-                    </p>
-                    <p>
-                        With a double major in Computer Science and Statistics, I develop methods to analyze complex biological data - from medical imaging to genomic sequences. My work translates computational insights into actionable knowledge for clinicians.
-                    </p>
-
-                    <div class="expertise-list">
-                        <div class="expertise-item">
-                            <span class="expertise-icon">&#128300;</span>
-                            Cancer Bioinformatics
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-icon">&#129302;</span>
-                            Machine Learning
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-icon">&#128202;</span>
-                            Statistical Modeling
-                        </div>
-                        <div class="expertise-item">
-                            <span class="expertise-icon">&#127973;</span>
-                            Healthcare Analytics
-                        </div>
-                    </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Research Papers</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Major Projects</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// tech_stack</span>
-                <h2 class="section-title">Skills & Tools</h2>
-                <p class="section-subtitle">Technologies I use to turn data into insights.</p>
+        <!-- Featured Work -->
+        <section class="featured-section">
+            <div class="section-header">
+                <h2>Featured Work</h2>
+                <a href="projects.html" class="see-all">See all projects &rarr;</a>
             </div>
 
-            <div class="skills-grid">
-                <div class="skill-card reveal">
-                    <div class="skill-card-header">
-                        <span class="skill-card-icon">&#128187;</span>
-                        <span class="skill-card-title">Languages</span>
+            <div class="featured-grid">
+                <a href="projects.html#tumor-analysis" class="featured-card featured-main">
+                    <div class="featured-label">Active Research</div>
+                    <h3>Tumor Microenvironment Analysis</h3>
+                    <p>Computational modeling to simulate antibody diffusion in ovarian cancer tissue, optimizing immunotherapy treatments.</p>
+                    <div class="featured-tech">
+                        <span>Python</span>
+                        <span>R</span>
+                        <span>Statistical Modeling</span>
+                        <span>Medical Imaging</span>
                     </div>
-                    <div class="skill-card-body">
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">R</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Swift</span>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <div class="skill-card reveal">
-                    <div class="skill-card-header">
-                        <span class="skill-card-icon">&#129302;</span>
-                        <span class="skill-card-title">ML & AI</span>
+                <a href="projects.html#recovery-system" class="featured-card">
+                    <div class="featured-label">Deployed</div>
+                    <h3>Road to Recovery</h3>
+                    <p>Patient monitoring dashboard for opioid treatment programs across British Columbia.</p>
+                    <div class="featured-tech">
+                        <span>Power BI</span>
+                        <span>Azure</span>
+                        <span>SQL</span>
                     </div>
-                    <div class="skill-card-body">
-                        <div class="skill-tags">
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">PyTorch</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">NLP</span>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
-                <div class="skill-card reveal">
-                    <div class="skill-card-header">
-                        <span class="skill-card-icon">&#128202;</span>
-                        <span class="skill-card-title">Statistics</span>
+                <a href="projects.html#binktracker" class="featured-card">
+                    <div class="featured-label">Open Source</div>
+                    <h3>BinkTrackerMac</h3>
+                    <p>Native macOS application for intelligent tracking and data visualization.</p>
+                    <div class="featured-tech">
+                        <span>Swift</span>
+                        <span>SwiftUI</span>
                     </div>
-                    <div class="skill-card-body">
-                        <div class="skill-tags">
-                            <span class="skill-tag">Bayesian</span>
-                            <span class="skill-tag">Regression</span>
-                            <span class="skill-tag">Survival Analysis</span>
-                            <span class="skill-tag">Hypothesis Testing</span>
-                        </div>
-                    </div>
-                </div>
+                </a>
+            </div>
+        </section>
 
-                <div class="skill-card reveal">
-                    <div class="skill-card-header">
-                        <span class="skill-card-icon">&#128300;</span>
-                        <span class="skill-card-title">Bioinformatics</span>
-                    </div>
-                    <div class="skill-card-body">
-                        <div class="skill-tags">
-                            <span class="skill-tag">Cancer Research</span>
-                            <span class="skill-tag">Medical Imaging</span>
-                            <span class="skill-tag">Genomics</span>
-                            <span class="skill-tag">Cell Analysis</span>
-                        </div>
-                    </div>
+        <!-- Expertise -->
+        <section class="expertise-section">
+            <h2>What I Do</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#128300;</div>
+                    <h3>Cancer Bioinformatics</h3>
+                    <p>Analyzing tumor microenvironments and immune responses using computational methods.</p>
                 </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-card-header">
-                        <span class="skill-card-icon">&#9729;</span>
-                        <span class="skill-card-title">Cloud & Data</span>
-                    </div>
-                    <div class="skill-card-body">
-                        <div class="skill-tags">
-                            <span class="skill-tag">Azure</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Spark</span>
-                            <span class="skill-tag">Neo4j</span>
-                        </div>
-                    </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#129302;</div>
+                    <h3>Machine Learning</h3>
+                    <p>Building predictive models with TensorFlow, PyTorch, and scikit-learn.</p>
                 </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-card-header">
-                        <span class="skill-card-icon">&#128200;</span>
-                        <span class="skill-card-title">Visualization</span>
-                    </div>
-                    <div class="skill-card-body">
-                        <div class="skill-tags">
-                            <span class="skill-tag">Power BI</span>
-                            <span class="skill-tag">Tableau</span>
-                            <span class="skill-tag">Matplotlib</span>
-                            <span class="skill-tag">ggplot2</span>
-                            <span class="skill-tag">D3.js</span>
-                        </div>
-                    </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#128202;</div>
+                    <h3>Statistical Analysis</h3>
+                    <p>Bayesian inference, survival analysis, and applied regression modeling.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#127973;</div>
+                    <h3>Healthcare Analytics</h3>
+                    <p>Transforming clinical data into actionable insights for better patient outcomes.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="skill-bars reveal">
-                <div class="skill-bar">
-                    <div class="skill-bar-header">
-                        <span class="skill-bar-name">Python & Data Science</span>
-                        <span class="skill-bar-value">95%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="95"></div>
-                    </div>
+        <!-- Current Focus -->
+        <section class="current-section">
+            <div class="current-content">
+                <div class="current-text">
+                    <span class="current-label">// currently</span>
+                    <h2>Researching Immune Responses in Ovarian Cancer</h2>
+                    <p>Working with Dr. Farouk Nathoo at UVic, I'm developing computational models to understand how antibodies diffuse through tumor tissue. This research aims to optimize immunotherapy treatments and improve patient outcomes.</p>
+                    <a href="research.html" class="link-arrow">Read about my research &rarr;</a>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-header">
-                        <span class="skill-bar-name">Statistical Analysis (R)</span>
-                        <span class="skill-bar-value">92%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="92"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-header">
-                        <span class="skill-bar-name">Machine Learning</span>
-                        <span class="skill-bar-value">88%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="88"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-bar-header">
-                        <span class="skill-bar-name">Data Visualization</span>
-                        <span class="skill-bar-value">90%</span>
-                    </div>
-                    <div class="skill-bar-track">
-                        <div class="skill-bar-fill" data-width="90"></div>
-                    </div>
+                <div class="current-image">
+                    <img src="5FB01355-6C79-4665-9E12-9E4D3A8B421C.JPG" alt="The journey ahead">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// work_history</span>
-                <h2 class="section-title">Experience</h2>
-                <p class="section-subtitle">Where I've made an impact.</p>
+        <!-- Quick Links -->
+        <section class="connect-section">
+            <h2>Let's Connect</h2>
+            <p>Interested in collaboration, research opportunities, or just want to chat about data science?</p>
+            <div class="connect-links">
+                <a href="mailto:r.pabbi001@gmail.com" class="connect-card">
+                    <span class="connect-icon">&#9993;</span>
+                    <span class="connect-label">Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/rishabh-p-330b89213" target="_blank" class="connect-card">
+                    <span class="connect-icon">&#128101;</span>
+                    <span class="connect-label">LinkedIn</span>
+                </a>
+                <a href="https://github.com/rishabhpabbi" target="_blank" class="connect-card">
+                    <span class="connect-icon">&#128187;</span>
+                    <span class="connect-label">GitHub</span>
+                </a>
             </div>
-
-            <div class="experience-list">
-                <div class="experience-item reveal">
-                    <div class="experience-dot"></div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Graduate Research Assistant</h3>
-                                <p class="experience-company">University of Victoria</p>
-                            </div>
-                            <span class="experience-date">Jan 2025 - Present</span>
-                        </div>
-                        <ul class="experience-description">
-                            <li>Conducting cancer research using computational modeling to understand immune responses in ovarian cancer</li>
-                            <li>Developing statistical methods to track antibody movement in tumor microenvironments</li>
-                            <li>Using ML to classify cell types and their interactions in medical imaging data</li>
-                        </ul>
-                        <div class="experience-tech">
-                            <span>Python</span>
-                            <span>R</span>
-                            <span>Statistical Modeling</span>
-                            <span>Medical Imaging</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item reveal">
-                    <div class="experience-dot"></div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Healthcare Data Analyst</h3>
-                                <p class="experience-company">Providence Health Care</p>
-                            </div>
-                            <span class="experience-date">May - Dec 2023</span>
-                        </div>
-                        <ul class="experience-description">
-                            <li>Led development of "Road to Recovery" monitoring system for opioid addiction treatment</li>
-                            <li>Designed Power BI dashboards visualizing critical healthcare metrics</li>
-                            <li>Automated reporting, saving 15+ hours per week; contributed to province-wide expansion</li>
-                        </ul>
-                        <div class="experience-tech">
-                            <span>Power BI</span>
-                            <span>SQL</span>
-                            <span>Azure</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="experience-item reveal">
-                    <div class="experience-dot"></div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Data Analyst Intern</h3>
-                                <p class="experience-company">Chandigarh Administration, India</p>
-                            </div>
-                            <span class="experience-date">Summer 2022</span>
-                        </div>
-                        <ul class="experience-description">
-                            <li>Digitized physical land records using graph algorithms for Digital India Initiative</li>
-                            <li>Optimized revenue collection; project scaled to multiple metropolitan cities</li>
-                        </ul>
-                        <div class="experience-tech">
-                            <span>Neo4j</span>
-                            <span>Graph Algorithms</span>
-                            <span>Python</span>
-                            <span>SQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// portfolio</span>
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Selected work showcasing data science in action.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card featured reveal">
-                    <div class="project-header">
-                        <div class="project-file">
-                            <span class="project-file-icon">&#128196;</span>
-                            tumor_analysis.py
-                        </div>
-                        <span class="project-status">Active Research</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Tumor Microenvironment Analysis</h3>
-                        <p class="project-description">
-                            Computational modeling system to simulate and analyze antibody diffusion patterns in cancer tissue. This research helps identify immune response mechanisms in ovarian cancer and aims to optimize immunotherapy treatments.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>R</span>
-                            <span>Statistical Modeling</span>
-                            <span>Medical Imaging</span>
-                            <span>ML</span>
-                        </div>
-                        <a href="#publications" class="project-link">
-                            View Research <span>&#8594;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <div class="project-file">
-                            <span class="project-file-icon">&#128196;</span>
-                            recovery_dashboard.sql
-                        </div>
-                        <span class="project-status">Deployed</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Road to Recovery System</h3>
-                        <p class="project-description">
-                            Patient monitoring dashboard for opioid addiction treatment programs with real-time analytics across BC.
-                        </p>
-                        <div class="project-tech">
-                            <span>Power BI</span>
-                            <span>SQL</span>
-                            <span>Azure</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            View Details <span>&#8594;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <div class="project-file">
-                            <span class="project-file-icon">&#128196;</span>
-                            BinkTrackerMac.swift
-                        </div>
-                        <span class="project-status">Open Source</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">BinkTrackerMac</h3>
-                        <p class="project-description">
-                            Native macOS application for intelligent tracking and analytics with sleek UI and data visualization.
-                        </p>
-                        <div class="project-tech">
-                            <span>Swift</span>
-                            <span>SwiftUI</span>
-                            <span>Core Data</span>
-                        </div>
-                        <a href="https://github.com/rishabhpabbi" target="_blank" class="project-link">
-                            View on GitHub <span>&#8594;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <div class="project-file">
-                            <span class="project-file-icon">&#128196;</span>
-                            land_records.cypher
-                        </div>
-                        <span class="project-status">Scaled</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Digital Land Records</h3>
-                        <p class="project-description">
-                            Graph-based system for digitizing land records, enabling efficient revenue collection across cities.
-                        </p>
-                        <div class="project-tech">
-                            <span>Neo4j</span>
-                            <span>Python</span>
-                            <span>Graph Algorithms</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            View Details <span>&#8594;</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section class="publications" id="publications">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// research_papers</span>
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">Contributing to cancer bioinformatics research.</p>
-            </div>
-
-            <div class="publications-list">
-                <div class="publication-item reveal">
-                    <div class="publication-number">01</div>
-                    <div class="publication-content">
-                        <h4>Identifying the Sources of Antibody in Tumor Microenvironment</h4>
-                        <p class="publication-meta"><strong>Pabbi, R.</strong> & Nathoo, F. | Expected 2025-2026</p>
-                        <span class="publication-status">In Preparation</span>
-                    </div>
-                </div>
-
-                <div class="publication-item reveal">
-                    <div class="publication-number">02</div>
-                    <div class="publication-content">
-                        <h4>A Computational Model to Simulate Antibody Diffusion</h4>
-                        <p class="publication-meta"><strong>Pabbi, R.</strong> & Nathoo, F. | Expected 2025-2026</p>
-                        <span class="publication-status">In Preparation</span>
-                    </div>
-                </div>
-
-                <div class="publication-item reveal">
-                    <div class="publication-number">03</div>
-                    <div class="publication-content">
-                        <h4>Identifying the Targets of Antibody Diffusion</h4>
-                        <p class="publication-meta"><strong>Pabbi, R.</strong> & Nathoo, F. | Expected 2025-2026</p>
-                        <span class="publication-status">In Preparation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// education</span>
-                <h2 class="section-title">Academic Background</h2>
-                <p class="section-subtitle">Strong foundation in CS and Statistics.</p>
-            </div>
-
-            <div class="education-grid">
-                <div class="education-card reveal">
-                    <div class="education-header">
-                        <span class="education-year">2025 - 2026</span>
-                    </div>
-                    <div class="education-body">
-                        <h3 class="education-degree">MSc Statistics</h3>
-                        <p class="education-school">University of Victoria</p>
-                        <div class="education-gpa">
-                            <span>&#9733;</span> GPA: 9.0/9.0
-                        </div>
-                        <ul class="education-details">
-                            <li>Supervisor: Dr. Farouk Nathoo</li>
-                            <li>Focus: Cancer bioinformatics</li>
-                            <li>Research: Antibody diffusion modeling</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="education-card reveal">
-                    <div class="education-header">
-                        <span class="education-year">2021 - 2024</span>
-                    </div>
-                    <div class="education-body">
-                        <h3 class="education-degree">BSc Computer Science & Statistics</h3>
-                        <p class="education-school">University of Victoria</p>
-                        <div class="education-gpa">
-                            <span>&#9733;</span> GPA: 8.0/9.0
-                        </div>
-                        <ul class="education-details">
-                            <li>Double Major</li>
-                            <li>Data Mining, Bayesian Statistics</li>
-                            <li>Machine Learning, Applied Regression</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="education-card reveal">
-                    <div class="education-header">
-                        <span class="education-year">2019 - 2021</span>
-                    </div>
-                    <div class="education-body">
-                        <h3 class="education-degree">Associate of Science</h3>
-                        <p class="education-school">Langara College</p>
-                        <div class="education-gpa">
-                            <span>&#9733;</span> Grade: A-
-                        </div>
-                        <ul class="education-details">
-                            <li>Computer Science Foundation</li>
-                            <li>Algorithms & Data Structures</li>
-                            <li>Object-Oriented Programming</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <span class="section-label">// get_in_touch</span>
-                <h2 class="section-title">Let's Connect</h2>
-            </div>
-
-            <div class="contact-content reveal">
-                <p>Interested in collaboration, research opportunities, or just want to chat about data science? I'd love to hear from you.</p>
-
-                <div class="contact-grid">
-                    <a href="mailto:r.pabbi001@gmail.com" class="contact-card">
-                        <div class="contact-icon">&#9993;</div>
-                        <h4>Email</h4>
-                        <span>r.pabbi001@gmail.com</span>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/rishabh-p-330b89213" target="_blank" class="contact-card">
-                        <div class="contact-icon">&#128101;</div>
-                        <h4>LinkedIn</h4>
-                        <span>Connect with me</span>
-                    </a>
-
-                    <a href="https://github.com/rishabhpabbi" target="_blank" class="contact-card">
-                        <div class="contact-icon">&#128187;</div>
-                        <h4>GitHub</h4>
-                        <span>View my code</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p>// Built with code by Rishabh Pabbi | Victoria, BC</p>
+    <footer class="vscode-footer">
+        <div class="footer-left">
+            <span class="footer-item">
+                <span class="footer-icon">&#128205;</span>
+                Victoria, BC
+            </span>
+            <span class="footer-item">
+                <span class="footer-icon">&#9749;</span>
+                Fueled by coffee & curiosity
+            </span>
+        </div>
+        <div class="footer-right">
+            <span class="footer-item">UTF-8</span>
+            <span class="footer-item">Rishabh Pabbi</span>
+        </div>
     </footer>
 
-    <script>
-        // Theme Toggle
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            const themeIcon = document.getElementById('theme-icon');
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-
-            // VS Code uses sun/moon icons
-            themeIcon.innerHTML = newTheme === 'dark' ? '&#9788;' : '&#9789;';
-        }
-
-        // Load saved theme (default to dark like VS Code)
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            const html = document.documentElement;
-            const themeIcon = document.getElementById('theme-icon');
-
-            html.setAttribute('data-theme', savedTheme);
-            themeIcon.innerHTML = savedTheme === 'dark' ? '&#9788;' : '&#9789;';
-        });
-
-        // Mobile Menu
-        function toggleMobileMenu() {
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-
-            mobileToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        }
-
-        function closeMobileMenu() {
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-
-            mobileToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 60;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Reveal on scroll
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', reveal);
-        reveal();
-
-        // Animate counters
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-value[data-target]');
-            counters.forEach(counter => {
-                const windowHeight = window.innerHeight;
-                const counterTop = counter.getBoundingClientRect().top;
-
-                if (counterTop < windowHeight - 100 && !counter.classList.contains('counted')) {
-                    counter.classList.add('counted');
-                    const target = parseFloat(counter.getAttribute('data-target'));
-                    const duration = 1500;
-                    const increment = target / (duration / 16);
-                    let current = 0;
-
-                    const updateCounter = () => {
-                        current += increment;
-                        if (current < target) {
-                            counter.textContent = target % 1 !== 0 ? current.toFixed(1) : Math.floor(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target % 1 !== 0 ? target.toFixed(1) : target;
-                        }
-                    };
-                    updateCounter();
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateCounters);
-        animateCounters();
-
-        // Animate skill bars
-        function animateSkillBars() {
-            const bars = document.querySelectorAll('.skill-bar-fill');
-            bars.forEach(bar => {
-                const windowHeight = window.innerHeight;
-                const barTop = bar.getBoundingClientRect().top;
-
-                if (barTop < windowHeight - 100) {
-                    const width = bar.getAttribute('data-width');
-                    bar.style.width = width + '%';
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateSkillBars);
-        animateSkillBars();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

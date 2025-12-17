@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Rishabh Pabbi - Data Science, Machine Learning, and Healthcare Analytics">
+    <title>Projects | Rishabh Pabbi</title>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rishabhpabbi.github.io/projects.html">
+    <meta property="og:title" content="Projects | Rishabh Pabbi">
+    <meta property="og:description" content="Data science projects including cancer bioinformatics research, healthcare dashboards, and machine learning applications.">
+    <meta property="og:image" content="https://rishabhpabbi.github.io/IMG_0022.JPG">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- VS Code Style Top Bar -->
+    <header class="vscode-header">
+        <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <div class="file-tabs">
+            <a href="index.html" class="tab">
+                <span class="tab-icon">&#127968;</span>
+                home
+            </a>
+            <a href="about.html" class="tab">
+                <span class="tab-icon">&#128100;</span>
+                about.md
+            </a>
+            <a href="projects.html" class="tab active">
+                <span class="tab-icon">&#128193;</span>
+                projects/
+            </a>
+            <a href="research.html" class="tab">
+                <span class="tab-icon">&#128218;</span>
+                research.bib
+            </a>
+            <a href="contact.html" class="tab">
+                <span class="tab-icon">&#9993;</span>
+                contact.json
+            </a>
+        </div>
+        <div class="header-actions">
+            <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                <span id="theme-icon">&#9788;</span>
+            </button>
+            <a href="https://github.com/rishabhpabbi" target="_blank" class="github-btn" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">Home</a>
+        <a href="about.html" class="mobile-nav-item">About</a>
+        <a href="projects.html" class="mobile-nav-item active">Projects</a>
+        <a href="research.html" class="mobile-nav-item">Research</a>
+        <a href="contact.html" class="mobile-nav-item">Contact</a>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section>
+            <div class="page-header">
+                <h1 class="page-title">Projects</h1>
+                <p class="page-subtitle">A collection of work spanning research, healthcare, and software development</p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Tumor Analysis -->
+                <div class="project-card" id="tumor-analysis">
+                    <div class="project-header">
+                        <span class="project-file">tumor_analysis.py</span>
+                        <span class="project-status">Active Research</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Tumor Microenvironment Analysis</h3>
+                        <p>
+                            Developing computational models to simulate how antibodies diffuse through ovarian cancer tissue. This research aims to understand immune response patterns and optimize immunotherapy treatment strategies.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>Statistical Modeling</span>
+                            <span>Medical Imaging</span>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="research.html" class="project-link">View Research &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Road to Recovery -->
+                <div class="project-card" id="recovery-system">
+                    <div class="project-header">
+                        <span class="project-file">recovery_dashboard.sql</span>
+                        <span class="project-status" style="background: rgba(0, 120, 212, 0.15); color: #0078d4;">Deployed</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Road to Recovery System</h3>
+                        <p>
+                            Led development of a patient monitoring dashboard for opioid addiction treatment programs. The system provides real-time analytics and is now deployed across British Columbia healthcare facilities.
+                        </p>
+                        <div class="project-tech">
+                            <span>Power BI</span>
+                            <span>SQL</span>
+                            <span>Azure</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-link" style="color: var(--text-muted);">Providence Health Care</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BinkTrackerMac -->
+                <div class="project-card" id="binktracker">
+                    <div class="project-header">
+                        <span class="project-file">BinkTrackerMac.swift</span>
+                        <span class="project-status" style="background: rgba(133, 89, 214, 0.15); color: #8559d6;">Open Source</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>BinkTrackerMac</h3>
+                        <p>
+                            Native macOS application for intelligent tracking and analytics. Features a clean SwiftUI interface with real-time data visualization and Core Data persistence.
+                        </p>
+                        <div class="project-tech">
+                            <span>Swift</span>
+                            <span>SwiftUI</span>
+                            <span>Core Data</span>
+                            <span>Charts</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/rishabhpabbi" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Land Records -->
+                <div class="project-card" id="land-records">
+                    <div class="project-header">
+                        <span class="project-file">land_records.cypher</span>
+                        <span class="project-status" style="background: rgba(255, 149, 0, 0.15); color: #ff9500;">Scaled</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Digital Land Records</h3>
+                        <p>
+                            Built a graph-based system for digitizing physical land records as part of India's Digital India Initiative. The solution uses Neo4j to model complex property relationships and has been scaled to multiple metropolitan cities.
+                        </p>
+                        <div class="project-tech">
+                            <span>Neo4j</span>
+                            <span>Python</span>
+                            <span>Graph Algorithms</span>
+                            <span>SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-link" style="color: var(--text-muted);">Government of India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Projects Section -->
+        <section class="featured-section">
+            <div style="max-width: 1100px; margin: 0 auto;">
+                <h2 style="margin-bottom: 16px;">Coming Soon</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 32px;">Projects currently in development or planning stages</p>
+
+                <div class="projects-grid">
+                    <div class="project-card" style="opacity: 0.7;">
+                        <div class="project-header">
+                            <span class="project-file">cell_classifier.py</span>
+                            <span class="project-status" style="background: rgba(255, 189, 46, 0.15); color: #e5a500;">In Progress</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Cell Type Classification Model</h3>
+                            <p>
+                                Deep learning model for automated classification of cell types in medical imaging data, supporting cancer research workflows.
+                            </p>
+                            <div class="project-tech">
+                                <span>PyTorch</span>
+                                <span>Computer Vision</span>
+                                <span>CNN</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" style="opacity: 0.7;">
+                        <div class="project-header">
+                            <span class="project-file">research_assistant.py</span>
+                            <span class="project-status" style="background: rgba(255, 189, 46, 0.15); color: #e5a500;">Planning</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>AI Research Assistant</h3>
+                            <p>
+                                LLM-powered tool for analyzing research papers, extracting insights, and accelerating literature reviews.
+                            </p>
+                            <div class="project-tech">
+                                <span>LangChain</span>
+                                <span>RAG</span>
+                                <span>NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section>
+            <h2 style="margin-bottom: 32px;">My Approach</h2>
+            <div class="expertise-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#127919;</div>
+                    <h3>Problem First</h3>
+                    <p>I start with understanding the real problem before jumping to solutions. Technology is a tool, not the goal.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#128200;</div>
+                    <h3>Data-Driven</h3>
+                    <p>Every decision is backed by data. I let the evidence guide the approach, not assumptions.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">&#128736;</div>
+                    <h3>Iterate & Improve</h3>
+                    <p>Ship early, gather feedback, and continuously refine. Perfect is the enemy of good.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="connect-section">
+            <h2>Have a Project in Mind?</h2>
+            <p>I'm always interested in challenging problems and meaningful collaborations</p>
+            <div class="connect-links">
+                <a href="contact.html" class="connect-card">
+                    <span class="connect-icon">&#9993;</span>
+                    <span class="connect-label">Let's Talk</span>
+                </a>
+                <a href="https://github.com/rishabhpabbi" target="_blank" class="connect-card">
+                    <span class="connect-icon">&#128187;</span>
+                    <span class="connect-label">GitHub</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="vscode-footer">
+        <div class="footer-left">
+            <span class="footer-item">
+                <span class="footer-icon">&#128205;</span>
+                Victoria, BC
+            </span>
+            <span class="footer-item">
+                <span class="footer-icon">&#9749;</span>
+                Fueled by coffee & curiosity
+            </span>
+        </div>
+        <div class="footer-right">
+            <span class="footer-item">UTF-8</span>
+            <span class="footer-item">Rishabh Pabbi</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
