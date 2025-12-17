@@ -610,6 +610,12 @@ section {
     line-height: 1.6;
 }
 
+.availability-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* ==================== CURRENT FOCUS ==================== */
 .current-section {
     background: var(--bg-secondary);
@@ -1292,8 +1298,19 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .expertise-grid[style*="repeat(4"] {
-        grid-template-columns: repeat(2, 1fr) !important;
+    .availability-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .expertise-card h3 {
+        font-size: 0.95rem;
+        word-wrap: break-word;
+    }
+
+    .expertise-card p {
+        font-size: 0.8rem;
     }
 
     .connect-links {
