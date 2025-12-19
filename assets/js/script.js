@@ -50,22 +50,26 @@ function initCounters() {
 
 function animateCounter(element) {
     const target = parseFloat(element.getAttribute('data-target'));
+    const suffix = element.getAttribute('data-suffix') || '';
     const duration = 1500;
     const steps = 60;
     const stepDuration = duration / steps;
-    const increment = target / steps;
-    let current = 0;
     let step = 0;
 
     const timer = setInterval(() => {
         step++;
-        current = (target / steps) * step;
+        const current = (target / steps) * step;
 
         if (step >= steps) {
-            element.textContent = target % 1 !== 0 ? target.toFixed(1) : target;
+            const finalValue = target % 1 !== 0 ? target.toFixed(2) : target;
+            if (suffix) {
+                element.innerHTML = finalValue + '<span style="font-size: 0.5em; opacity: 0.7;">' + suffix + '</span>';
+            } else {
+                element.textContent = finalValue;
+            }
             clearInterval(timer);
         } else {
-            element.textContent = target % 1 !== 0 ? current.toFixed(1) : Math.floor(current);
+            element.textContent = target % 1 !== 0 ? current.toFixed(2) : Math.floor(current);
         }
     }, stepDuration);
 }
