@@ -63,7 +63,12 @@ function animateCounter(element) {
         if (step >= steps) {
             const finalValue = target % 1 !== 0 ? target.toFixed(2) : target;
             if (suffix) {
-                element.innerHTML = finalValue + '<span style="font-size: 0.5em; opacity: 0.7;">' + suffix + '</span>';
+                const suffixSpan = document.createElement('span');
+                suffixSpan.style.fontSize = '0.5em';
+                suffixSpan.style.opacity = '0.7';
+                suffixSpan.textContent = suffix;
+                element.textContent = finalValue;
+                element.appendChild(suffixSpan);
             } else {
                 element.textContent = finalValue;
             }
